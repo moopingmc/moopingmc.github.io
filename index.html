@@ -796,6 +796,132 @@
       color: var(--accent-pink);
     }
     
+    /* LEGAL NOTICE HIGHLIGHT */
+    .legal-notice {
+      background: linear-gradient(135deg, rgba(255, 184, 217, 0.2), rgba(255, 216, 102, 0.2));
+      border: 3px solid var(--accent-pink);
+      border-radius: 18px;
+      padding: 25px;
+      margin: 25px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(255, 184, 217, 0.3);
+      animation: legalPulse 4s ease-in-out infinite;
+      transform: translateY(0);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    @keyframes legalPulse {
+      0%, 100% {
+        box-shadow: 0 10px 30px rgba(255, 184, 217, 0.3);
+        border-color: var(--accent-pink);
+      }
+      50% {
+        box-shadow: 0 15px 40px rgba(255, 184, 217, 0.5);
+        border-color: var(--accent-yellow);
+      }
+    }
+    
+    .legal-notice:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(255, 184, 217, 0.4);
+    }
+    
+    .legal-notice::before {
+      content: '⚖️';
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.8rem;
+      opacity: 0.2;
+    }
+    
+    .legal-notice::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-yellow), var(--accent-purple));
+      animation: gradientFlow 3s linear infinite;
+      background-size: 300% 100%;
+    }
+    
+    .legal-title {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--accent-pink);
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 5px rgba(255, 184, 217, 0.3);
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .legal-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-yellow));
+      border-radius: 3px;
+    }
+    
+    .legal-subtitle {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--mint-darker);
+      margin: 20px 0 10px;
+      padding-left: 15px;
+      position: relative;
+    }
+    
+    .legal-subtitle::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent-pink);
+      font-size: 1.5rem;
+    }
+    
+    .legal-text {
+      margin-bottom: 15px;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+    
+    .legal-text::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--mint-primary);
+      font-weight: bold;
+    }
+    
+    .legal-highlight {
+      background: linear-gradient(135deg, rgba(167, 240, 217, 0.3), rgba(255, 184, 217, 0.3));
+      border-left: 4px solid var(--accent-yellow);
+      padding: 12px 15px;
+      border-radius: 0 10px 10px 0;
+      margin: 10px 0 15px 0;
+      font-weight: 600;
+      color: var(--text-light);
+      box-shadow: 0 5px 15px rgba(255, 216, 102, 0.2);
+      transition: all 0.4s ease;
+    }
+    
+    .legal-highlight:hover {
+      transform: translateX(5px);
+      box-shadow: 0 8px 20px rgba(255, 216, 102, 0.3);
+    }
+    
     /* Important Notice */
     .important-notice {
       background: linear-gradient(135deg, var(--accent-yellow), #ffeaa7);
@@ -853,6 +979,88 @@
       color: #8a5a00;
       font-weight: 600;
       font-size: 1.1rem;
+    }
+    
+    /* How to Credit Video Section */
+    .credit-video-section {
+      margin: 35px 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid var(--accent-purple);
+      background: linear-gradient(135deg, rgba(216, 184, 255, 0.1), rgba(167, 240, 217, 0.1));
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .credit-video-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(216, 184, 255, 0.2);
+    }
+    
+    .credit-video-toggle {
+      background: linear-gradient(135deg, var(--accent-purple), #c7a8ff);
+      color: var(--text-light);
+      padding: 22px;
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: 0.5px;
+      border: none;
+      width: 100%;
+    }
+    
+    .credit-video-toggle:hover {
+      background: linear-gradient(135deg, #c7a8ff, #d9b8ff);
+      letter-spacing: 1px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    
+    .credit-video-toggle::after {
+      content: '▼';
+      font-size: 1rem;
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .credit-video-toggle.active::after {
+      transform: rotate(180deg);
+    }
+    
+    .credit-video-content {
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .credit-video-content.active {
+      padding: 30px;
+      max-height: 800px;
+    }
+    
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      border: 2px solid var(--mint-primary);
     }
     
     /* Gallery - Fixed Frames & Center Alignment */
@@ -1496,6 +1704,10 @@
       .thumb img {
         max-height: 180px;
       }
+      
+      .video-container {
+        padding-bottom: 75%; /* Adjust for mobile */
+      }
     }
     
     @media (max-width: 768px) {
@@ -1545,6 +1757,10 @@
         width: 45px;
         height: 45px;
         font-size: 1.3rem;
+      }
+      
+      .video-container {
+        padding-bottom: 85%; /* Adjust for smaller screens */
       }
     }
     
@@ -1726,6 +1942,38 @@
         <div class="tos-section">
           <div class="tos-toggle"> BEFORE COMMISSIONING READ TOS </div>
           <div class="tos-content">
+            
+            <!-- HIGHLIGHTED LEGAL NOTICE - MOVED TO TOP -->
+            <div class="legal-notice">
+              <div class="legal-title">⚖️ IMPORTANT LEGAL NOTICE</div>
+              
+              <div class="legal-subtitle">Copyright & Usage Rights</div>
+              <div class="legal-text">
+                <span class="legal-highlight">The Artist retains copyright of the commissioned design.</span>
+              </div>
+              <div class="legal-text">
+                <span class="legal-highlight">The Client receives exclusive rights to use the final artwork for personal display, social media banners, and avatars.</span>
+              </div>
+              <div class="legal-text">
+                <span class="legal-highlight">The Client may not resell the design, claim it as their own creation, or commission derivative works from other artists without permission.</span>
+              </div>
+              
+              <div class="legal-subtitle">Source Material Requirements</div>
+              <div class="legal-text">
+                <span class="legal-highlight">You must provide official source material for your commission.</span>
+              </div>
+              <div class="legal-text">
+                <span class="legal-highlight">I cannot use another artist's fan art or unlicensed artwork as a direct reference.</span>
+              </div>
+              <div class="legal-text">
+                <span class="legal-highlight">If you wish to commission a piece based on another artist's work, you must provide proof of their permission.</span>
+              </div>
+              
+              <div style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: var(--mint-darker);">
+                <strong>Please read these terms carefully before commissioning!</strong>
+              </div>
+            </div>
+            
             <h3>Before commissioning</h3>
             <ul>
               <li>Please know what characters you want to pick and what design you want.</li>
@@ -1749,11 +1997,27 @@
               <li>If you change or modify the banner in any way, you must inform me.</li>
               <li>Credit area must be viewable first glance and around top on your osu! bio</li>
             </ul>
+            
             <h3>Perks for paying:</h3>
             <ul>
               <li>You get to have a PSD of your banner! meaning you can make the changes yourself incase of namechange etc! so far that is the only thing lo!</li>
               <li>If you have been a nice client to me, I can make one of your friends a free banner, though, credit is needed.</li>
             </ul>
+          </div>
+        </div>
+        
+        <!-- ADDED HOW TO CREDIT VIDEO SECTION -->
+        <div class="credit-video-section">
+          <button class="credit-video-toggle">📹 HOW TO CREDIT PROPERLY - VIDEO GUIDE</button>
+          <div class="credit-video-content">
+            <p>Watch this short video tutorial to learn how to properly credit my work in your osu! profile or social media:</p>
+            <div class="video-container">
+              <video controls preload="metadata">
+                <source src="https://cdn.discordapp.com/attachments/1393188665639047339/1452697993642770623/how_to_credit_proper.mp4?ex=694cbc2f&is=694b6aaf&hm=1bef2b5532bc245293712b04bdf9df170b923ee82044b1bc7629518975b88bee&" type="video/mp4">
+                Your browser does not support the video tag. <a href="https://cdn.discordapp.com/attachments/1393188665639047339/1452697993642770623/how_to_credit_proper.mp4?ex=694cbc2f&is=694b6aaf&hm=1bef2b5532bc245293712b04bdf9df170b923ee82044b1bc7629518975b88bee&" target="_blank">Click here to download the video</a>
+              </video>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: var(--mint-darker);"><strong>Remember:</strong> Proper credit helps other artists find me and ensures a respectful creative community!</p>
           </div>
         </div>
         
@@ -1764,84 +2028,108 @@
         
      <div class="galleries" id="galleries">
         <a class="thumb" href="https://osu.ppy.sh/users/17494164" target="_blank" rel="noopener noreferrer" aria-label="ggeexx1">
-       <img src="img/ggeexx1.png" alt="ggeexx1" title="ggeexx1 - Click for profile, hold to preview" loading="lazy" />
+          <div class="banner-container">
+            <img src="img/ggeexx1.png" alt="ggeexx1" title="ggeexx1 - Click for profile, hold to preview" loading="lazy" />
+          </div>
        <div class="banner-info">
         <span>ggeexx1</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Legend_xD">
-       <img src="img/image.png" alt="Ronaldo" title="Ronaldo - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/image.png" alt="Ronaldo" title="Ronaldo - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Ronaldo</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/19360101" target="_blank" rel="noopener noreferrer" aria-label="Legend_xD">
-       <img src="img/legend.png" alt="Legend_xD" title="Legend_xD - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/legend.png" alt="Legend_xD" title="Legend_xD - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Legend_xD</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="img/zaeem4.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/zaeem4.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Astolfo">
-       <img src="img/astolfo.png" alt="Astolfo" title="Astolfo - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/astolfo.png" alt="Astolfo" title="Astolfo - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Astolfo</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/8474029" target="_blank" rel="noopener noreferrer" aria-label="wonder5193">
-       <img src="https://pbs.twimg.com/media/G7QPmULWIAAgPHH?format=jpg&name=large" alt="wonder5193" title="wonder5193 - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://pbs.twimg.com/media/G7QPmULWIAAgPHH?format=jpg&name=large" alt="wonder5193" title="wonder5193 - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>wonder5193</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="YUYUOPE">
-       <img src="img/yuyuope.png" alt="YUYUOPE" title="YUYUOPE - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/yuyuope.png" alt="YUYUOPE" title="YUYUOPE - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>YUYUOPE</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Ayykk">
-       <img src="img/ayykk.png" alt="Ayykk" title="Ayykk - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/ayykk.png" alt="Ayykk" title="Ayykk - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Ayykk</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="img/zaeem3.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/zaeem3.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="img/zaeem2.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/zaeem2.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="img/zaeem1.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/zaeem1.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb" href="https://osu.ppy.sh/users/4907504" target="_blank" rel="noopener noreferrer" aria-label="Hopes">
-       <img src="img/hopes.png" alt="Hopes" title="Hopes - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/hopes.png" alt="Hopes" title="Hopes - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Hopes</span>
         <small>Custom Osu!Mania Banner</small>
@@ -1849,238 +2137,306 @@
       </a>
             <!-- Hidden banners (will be shown when "Show More" is clicked) -->
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="img/zaeemsillygoober.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/zaeemsillygoober.png" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/8581031" target="_blank" rel="noopener noreferrer" aria-label="Poca">
-       <img src="img/poca.png" alt="Poca" title="Poca - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="img/poca.png" alt="Poca" title="Poca - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Poca</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/33599" target="_blank" rel="noopener noreferrer" aria-label="Andrea">
-       <img src="https://zae.zya.me/img/andrea.png" alt="Andrea" title="Andrea - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zae.zya.me/img/andrea.png" alt="Andrea" title="Andrea - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Andrea</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="DrippyMeep">
-       <img src="https://mpbox.xyz/zae/img/DrippyMeep.png" alt="DrippyMeep" title="DrippyMeep - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://mpbox.xyz/zae/img/DrippyMeep.png" alt="DrippyMeep" title="DrippyMeep - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>DrippyMeep</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/12040572/mania" target="_blank" rel="noopener noreferrer" aria-label="_Ennill">
-       <img src="https://zaedae.carrd.co/assets/images/gallery01/2975365a.jpg?v=fda087a1" alt="_Ennill" title="_Ennill - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery01/2975365a.jpg?v=fda087a1" alt="_Ennill" title="_Ennill - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>_Ennill</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/758406/mania" target="_blank" rel="noopener noreferrer" aria-label="Dressurf">
-       <img src="https://zaedae.carrd.co/assets/images/gallery02/93c92bdf.jpg?v=fda087a1" alt="Dressurf" title="Dressurf - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery02/93c92bdf.jpg?v=fda087a1" alt="Dressurf" title="Dressurf - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Dressurf</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/10790649/mania" target="_blank" rel="noopener noreferrer" aria-label="Kalkai">
-       <img src="https://zaedae.carrd.co/assets/images/gallery03/6cc019bd.jpg?v=fda087a1" alt="Kalkai" title="Kalkai - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery03/6cc019bd.jpg?v=fda087a1" alt="Kalkai" title="Kalkai - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Kalkai</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/10083439/mania" target="_blank" rel="noopener noreferrer" aria-label="Boji">
-       <img src="https://zaedae.carrd.co/assets/images/gallery04/5ba7ebf2.jpg?v=fda087a1" alt="Boji" title="Boji - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery04/5ba7ebf2.jpg?v=fda087a1" alt="Boji" title="Boji - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Boji</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/24675802/mania" target="_blank" rel="noopener noreferrer" aria-label="Logan">
-       <img src="https://zaedae.carrd.co/assets/images/gallery05/aa9ccdeb.jpg?v=fda087a1" alt="Logan" title="Logan - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery05/aa9ccdeb.jpg?v=fda087a1" alt="Logan" title="Logan - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Logan</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="ZaeDae">
-       <img src="https://zaedae.carrd.co/assets/images/gallery06/6eaef9e7.jpg?v=fda087a1" alt="ZaeDae" title="ZaeDae - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery06/6eaef9e7.jpg?v=fda087a1" alt="ZaeDae" title="ZaeDae - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>ZaeDae</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="ZaeDae alt">
-       <img src="https://zaedae.carrd.co/assets/images/gallery07/439c7c1c.jpg?v=fda087a1" alt="ZaeDae" title="ZaeDae - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery07/439c7c1c.jpg?v=fda087a1" alt="ZaeDae" title="ZaeDae - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>ZaeDae</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/33599" target="_blank" rel="noopener noreferrer" aria-label="Andrea">
-       <img src="https://zaedae.carrd.co/assets/images/gallery08/922d0e96.jpg?v=fda087a1" alt="Andrea" title="Andrea - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery08/922d0e96.jpg?v=fda087a1" alt="Andrea" title="Andrea - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Andrea</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/1273955" target="_blank" rel="noopener noreferrer" aria-label="Marco">
-       <img src="https://zaedae.carrd.co/assets/images/gallery09/09e397a7.jpg?v=fda087a1" alt="Marco" title="Marco - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery09/09e397a7.jpg?v=fda087a1" alt="Marco" title="Marco - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Marco</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/28686998/mania" target="_blank" rel="noopener noreferrer" aria-label="Nxllification">
-       <img src="https://zaedae.carrd.co/assets/images/gallery10/9b6b6e34.jpg?v=fda087a1" alt="Nxllification" title="Nxllification - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery10/9b6b6e34.jpg?v=fda087a1" alt="Nxllification" title="Nxllification - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Nxllification</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="https://zaedae.carrd.co/assets/images/gallery11/85628d1d.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery11/85628d1d.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="https://zaedae.carrd.co/assets/images/gallery12/a381b1fa.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery12/a381b1fa.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="https://zaedae.carrd.co/assets/images/gallery13/18a6c2fe.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery13/18a6c2fe.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/36450912" target="_blank" rel="noopener noreferrer" aria-label="Mazii">
-       <img src="https://zaedae.carrd.co/assets/images/gallery15/d0c53408.jpg?v=fda087a1" alt="Mazii" title="Mazii - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery15/d0c53408.jpg?v=fda087a1" alt="Mazii" title="Mazii - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Mazii</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/15841840/osu" target="_blank" rel="noopener noreferrer" aria-label="Superfreak">
-       <img src="https://zaedae.carrd.co/assets/images/gallery16/7353659c.jpg?v=fda087a1" alt="Superfreak" title="Superfreak - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery16/7353659c.jpg?v=fda087a1" alt="Superfreak" title="Superfreak - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Superfreak</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35176642" target="_blank" rel="noopener noreferrer" aria-label="Mooping">
-       <img src="https://zaedae.carrd.co/assets/images/gallery17/22bd4528.jpg?v=fda087a1" alt="Mooping" title="Mooping - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery17/22bd4528.jpg?v=fda087a1" alt="Mooping" title="Mooping - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Mooping</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="https://zaedae.carrd.co/assets/images/gallery18/9eb0cb66.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery18/9eb0cb66.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/14947043" target="_blank" rel="noopener noreferrer" aria-label="hz404">
-       <img src="https://zaedae.carrd.co/assets/images/gallery19/1b800d7a.jpg?v=fda087a1" alt="hz404" title="hz404 - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery19/1b800d7a.jpg?v=fda087a1" alt="hz404" title="hz404 - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>hz404</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/19249802" target="_blank" rel="noopener noreferrer" aria-label="Juno">
-       <img src="https://zaedae.carrd.co/assets/images/gallery20/09d324f0.jpg?v=fda087a1" alt="Juno" title="Juno - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery20/09d324f0.jpg?v=fda087a1" alt="Juno" title="Juno - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Juno</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/26473894" target="_blank" rel="noopener noreferrer" aria-label="Imyeeyee">
-       <img src="https://zaedae.carrd.co/assets/images/gallery21/e962b256.jpg?v=fda087a1" alt="Imyeeyee" title="Imyeeyee - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery21/e962b256.jpg?v=fda087a1" alt="Imyeeyee" title="Imyeeyee - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Imyeeyee</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/32785738" target="_blank" rel="noopener noreferrer" aria-label="Lucy">
-       <img src="https://zaedae.carrd.co/assets/images/gallery22/2d836ced.jpg?v=fda087a1" alt="Lucy" title="Lucy - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery22/2d836ced.jpg?v=fda087a1" alt="Lucy" title="Lucy - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Lucy</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/1383951" target="_blank" rel="noopener noreferrer" aria-label="IcyWorld">
-       <img src="https://zaedae.carrd.co/assets/images/gallery23/02525a3a.jpg?v=fda087a1" alt="IcyWorld" title="IcyWorld - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery23/02525a3a.jpg?v=fda087a1" alt="IcyWorld" title="IcyWorld - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>IcyWorld</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="https://zaedae.carrd.co/assets/images/gallery24/1c730fda.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery24/1c730fda.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/12017594" target="_blank" rel="noopener noreferrer" aria-label="Leototo">
-       <img src="https://zaedae.carrd.co/assets/images/gallery25/70fdd779.jpg?v=fda087a1" alt="Leototo" title="Leototo - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery25/70fdd779.jpg?v=fda087a1" alt="Leototo" title="Leototo - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Leototo</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="https://zaedae.carrd.co/assets/images/gallery26/66d289a2.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery26/66d289a2.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Frawog">
-       <img src="https://zaedae.carrd.co/assets/images/gallery27/0d21b745.jpg?v=fda087a1" alt="Frawog" title="Frawog - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery27/0d21b745.jpg?v=fda087a1" alt="Frawog" title="Frawog - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Frawog</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/32180438" target="_blank" rel="noopener noreferrer" aria-label="Cansole">
-       <img src="https://zaedae.carrd.co/assets/images/gallery28/f2d31b67.jpg?v=fda087a1" alt="Cansole" title="Cansole - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery28/f2d31b67.jpg?v=fda087a1" alt="Cansole" title="Cansole - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Cansole</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/4477497" target="_blank" rel="noopener noreferrer" aria-label="Cheewee10">
-       <img src="https://zaedae.carrd.co/assets/images/gallery29/16d489c2.jpg?v=fda087a1" alt="Cheewee10" title="Cheewee10 - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery29/16d489c2.jpg?v=fda087a1" alt="Cheewee10" title="Cheewee10 - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Cheewee10</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="Zaeem">
-       <img src="https://zaedae.carrd.co/assets/images/gallery30/bce23294.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery30/bce23294.jpg?v=fda087a1" alt="Zaeem" title="Zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>Zaeem</span>
         <small>Custom Osu!Mania Banner</small>
        </div>
       </a>
       <a class="thumb hidden-banner" href="https://osu.ppy.sh/users/35463094" target="_blank" rel="noopener noreferrer" aria-label="zaeem">
-       <img src="https://zaedae.carrd.co/assets/images/gallery31/cb9ffab3.jpg?v=fda087a1" alt="zaeem" title="zaeem - Click for profile, hold to preview" loading="lazy" />
+        <div class="banner-container">
+          <img src="https://zaedae.carrd.co/assets/images/gallery31/cb9ffab3.jpg?v=fda087a1" alt="zaeem" title="zaeem - Click for profile, hold to preview" loading="lazy" />
+        </div>
        <div class="banner-info">
         <span>zaeem</span>
         <small>Custom Osu!Mania Banner</small>
@@ -2146,6 +2502,8 @@
     const closePopup = document.getElementById('closePopup');
     const tosToggle = document.querySelector('.tos-toggle');
     const tosContent = document.querySelector('.tos-content');
+    const creditVideoToggle = document.querySelector('.credit-video-toggle');
+    const creditVideoContent = document.querySelector('.credit-video-content');
     const faqQuestions = document.querySelectorAll('.faq-question');
     const showMoreBtn = document.getElementById('showMoreBtn');
     const hiddenBanners = document.querySelectorAll('.hidden-banner');
@@ -2190,19 +2548,16 @@
       }
     }
     
-    // Theme toggle functionality - FIXED: Prevent default
-    themeToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      
+    // Theme toggle functionality - FIXED: Remove preventDefault
+    themeToggle.addEventListener('click', () => {
       const currentTheme = document.body.getAttribute('data-theme');
       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      document.body.style.opacity = 0.7;
-      setTimeout(() => {
+      
+      // Smoother transition without opacity flicker
+      requestAnimationFrame(() => {
         document.body.setAttribute('data-theme', newTheme);
         localStorage.setItem('portfolio-theme', newTheme);
-        document.body.style.opacity = 1;
-      }, 300);
+      });
     });
     
     // Load saved theme
@@ -2234,7 +2589,7 @@
       });
     });
     
-    // Back to top functionality - FIXED: Prevent random scrolling
+    // Back to top functionality
     backToTop.addEventListener('click', (e) => {
       e.preventDefault();
       window.scrollTo({
@@ -2259,28 +2614,32 @@
         bannerCount.textContent = count + '+';
         if (count >= targetCount) clearInterval(countInterval);
       }, 80);
+      
+      // Preload critical images
+      preloadCriticalImages();
     });
     
-    // Close welcome popup - FIXED: Prevent random scrolling
-    closePopup.addEventListener('click', (e) => {
-      e.preventDefault();
+    // Close welcome popup
+    closePopup.addEventListener('click', () => {
       welcomePopup.classList.remove('active');
       popupOverlay.classList.remove('active');
     });
     
-    // TOS toggle - FIXED: Prevent random scrolling
-    tosToggle.addEventListener('click', (e) => {
-      e.preventDefault();
+    // TOS toggle - FIXED: Remove preventDefault
+    tosToggle.addEventListener('click', () => {
       tosToggle.classList.toggle('active');
       tosContent.classList.toggle('active');
     });
     
-    // FAQ accordion - FIXED: Prevent random scrolling
+    // Credit video toggle - FIXED: Remove preventDefault
+    creditVideoToggle.addEventListener('click', () => {
+      creditVideoToggle.classList.toggle('active');
+      creditVideoContent.classList.toggle('active');
+    });
+    
+    // FAQ accordion - FIXED: Remove preventDefault
     faqQuestions.forEach(question => {
-      question.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        
+      question.addEventListener('click', () => {
         const answer = question.nextElementSibling;
         question.classList.toggle('active');
         answer.classList.toggle('active');
@@ -2295,25 +2654,23 @@
       });
     });
     
-    // Lightbox functionality - FIXED: Better handling
+    // Lightbox functionality - FIXED: Remove problematic preventDefault
     bannerImages.forEach(img => {
       img.addEventListener('click', function(e) {
         // Only open lightbox if Ctrl or Cmd isn't pressed (for opening in new tab)
         if (!e.ctrlKey && !e.metaKey) {
-          e.preventDefault();
-          e.stopPropagation();
+          // Don't prevent default - let the link work normally
           lightboxImg.src = this.src;
           lightboxImg.alt = this.alt;
           lightbox.classList.add('active');
           document.body.style.overflow = 'hidden';
+          return false; // Return false instead of preventDefault
         }
       });
     });
     
     // Close lightbox
-    lightboxClose.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+    lightboxClose.addEventListener('click', () => {
       lightbox.classList.remove('active');
       document.body.style.overflow = 'auto';
     });
@@ -2334,11 +2691,9 @@
       }
     });
     
-    // Show more banners - FIXED: Working toggle button
+    // Show more banners - FIXED: Remove preventDefault
     let showAllBanners = false;
-    showMoreBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      
+    showMoreBtn.addEventListener('click', () => {
       if (!showAllBanners) {
         // Show all hidden banners
         hiddenBanners.forEach((banner, index) => {
@@ -2372,92 +2727,24 @@
       }
     });
     
-    // Add ripple effect to buttons - FIXED: Prevent default
-    document.querySelectorAll('button:not(.discord-btn):not(.twitter-btn), .show-more-btn, .close-btn').forEach(button => {
-      button.addEventListener('click', function(e) {
-        // Don't add ripple to banner links
-        if (this.classList.contains('thumb')) return;
-        
-        // Prevent any default behavior that might cause scrolling
-        e.preventDefault();
-        e.stopPropagation();
-        
-        // Only add ripple effect for visual feedback, not functional
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.cssText = `
-          position: absolute;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.6);
-          transform: scale(0);
-          animation: ripple 0.7s linear;
-          width: ${size}px;
-          height: ${size}px;
-          top: ${y}px;
-          left: ${x}px;
-          pointer-events: none;
-          z-index: 1;
-        `;
-        
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(ripple);
-        
-        setTimeout(() => ripple.remove(), 700);
-      });
-    });
-    
-    // Add CSS for ripple animation
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ripple {
-        to {
-          transform: scale(4);
-          opacity: 0;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-    
-    // Preload images for better performance
-    function preloadImages() {
-      const images = document.querySelectorAll('.thumb img');
-      images.forEach(img => {
-        const src = img.getAttribute('src');
-        if (src && !src.startsWith('data:')) {
-          const image = new Image();
-          image.src = src;
-        }
+    // Preload critical images for better performance
+    function preloadCriticalImages() {
+      const criticalImages = [
+        'https://mpbox.xyz/zae/IMG_3995.jpeg', // Avatar
+        // First few banner images for immediate display
+        'img/ggeexx1.png',
+        'img/image.png',
+        'img/legend.png',
+        'img/zaeem4.png'
+      ];
+      
+      criticalImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
       });
     }
     
-    // Call preload after page loads
-    setTimeout(preloadImages, 2000);
-    
-    // Add typing effect to title
-    const title = document.querySelector('.title');
-    const originalText = title.textContent;
-    title.textContent = '';
-    
-    let i = 0;
-    function typeWriter() {
-      if (i < originalText.length) {
-        title.textContent += originalText.charAt(i);
-        i++;
-        setTimeout(typeWriter, 60);
-      }
-    }
-    
-    // Start typing effect after popup
-    setTimeout(() => {
-      typeWriter();
-    }, 1500);
-    
-    // Fix banner sizes and center them
+    // Optimize banner display
     function optimizeBannerDisplay() {
       const thumbs = document.querySelectorAll('.thumb');
       
@@ -2513,6 +2800,36 @@
     window.addEventListener('load', () => {
       setTimeout(optimizeBannerDisplay, 1000);
     });
+    
+    // Add typing effect to title
+    const title = document.querySelector('.title');
+    const originalText = title.textContent;
+    title.textContent = '';
+    
+    let i = 0;
+    function typeWriter() {
+      if (i < originalText.length) {
+        title.textContent += originalText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 60);
+      }
+    }
+    
+    // Start typing effect after popup
+    setTimeout(() => {
+      typeWriter();
+    }, 1500);
+    
+    // Fix for video loading
+    const video = document.querySelector('.credit-video-content video');
+    if (video) {
+      video.addEventListener('loadeddata', () => {
+        console.log('Video loaded successfully');
+      });
+      video.addEventListener('error', (e) => {
+        console.log('Video loading error:', e);
+      });
+    }
   </script>
 </body>
 </html>
